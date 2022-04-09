@@ -1,0 +1,49 @@
+use 데이터베이스이름 (= 스키마이름) ;
+> 데이터베이스(=스키마) 호출
+
+★
+select * from 테이블이름 ;
+=> 테이블 정보값 전부 호출   ,  *은 앞에서 끝까지 나오는거고 
+컬럼명쓰면 컬럼데이터 값 만 나옴
+ex)
+select * from no_1;   
+
+★
+select *from 데이터베이스이름 . 테이블이름 ;
+위와 같음
+ex)
+select * from remember.no_1; 
+
+●
+desc 테이블이름 ; 
+=> 테이블의 자료타입 키 정보 호출
+ex)
+desc no_1;	
+
+
+
+●
+desc .데이터베이스이름 . 테이블이름 ; 
+위와 같음
+ex)
+desc remember . no_1; 
+
+
+◆
+/* 테이블 생성
+-- create of 데이터명(
+	컬렴데이터명 자료형(글자수) not null primary key,
+	컬렴데이터명 자료형(글자수) not null
+)
+;
+*/
+
+★
+foreign key (userid) references usertbl(userid)  
+=> foreign key(컬럼명) reference(컬럼명) 을써야한다
+
+=> 외래키를 쓰는 칸에는 레퍼런스를 써야함
+위의 예제에서 buytbl 테이블의 userid 는 usertbl 테이블의 userid를 참조하도록 설정됩니다.
+따라서 usertbl 테이블의 userid 값이 변경되면, 같은 값의 buytbl 테이블의 userid 값도 같이 변경됩니다
+
+

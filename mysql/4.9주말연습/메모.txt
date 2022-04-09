@@ -1,0 +1,293 @@
+https://github.com/qkboo/Lecture_MySQL/ 강사님 깃허브  주소
+
+http://bit.ly/35LNLD6 설치설명 주소
+http://bit.ly/3NSPCHx
+
+★데이터베이스란 '목적에 맞도록 관련된 데이터를 모아두기 위한 방법'
+=판매,연구,학사운영,회계처리
+
+○'관계배수'라는 엔진(= ■무결성을 특성을 추구함)이 내장되어있다.
+
+데이터 모음을 관리 및 이용하도록 제공하는 데이터베이스 관리 시스템을
+일반적으로 데이터베이스라고도 부른다
+
+1.데이터의집합
+2.여러명이 사용자, 응용프로그램이 공유
+★3.동시접근가능
+
+DBMS -데이터베이스를 관리/운영하는 역할
+동시 사용 가능한 데이터 저장공간을 위한 시스템 과 응용 프로그램
+
+SQL - 임시저장공간이 없음
+
+질의처리기 - 관계배수처리기
+
+○데이터베이스 기능적 특징
+데이터 정의
+데이터 조작
+데이터 추출
+데이터 제어
+
+○수행 보자을 위한
+- 트렌젝션을의 실현성 보장
+- DBMS가 자체적으로 제공하는 백업/복원가능
+- 데이터 손실시 복원/복구
+
+데이터베이스종류
+○관계형 데이터베이스
+- 1970년 부터사용
+- 데이터를 키와 값의 관계로 구성한 테이블로 구성해 관계대수로 조작
+- SQL이라는 표준 질의어를 통해 데이터를 조작 또는 조회
+
+○객체지향 데이터베이스  OODB
+정보를 객체의 형태로 표현한 데이터베이스
+객체모델이 적용되어 데이터 모델을 그대로 응용프로그램에 적용
+(참고로 SQL개발자들이 객체지향 싫어함)
+
+○객체관계형 데이터베이스 ORDB
+관계형데이터베이스 + 객체지향 데이터베이스
+
+NoSQL (객체지향기법을 살짝 받아들이고 텍스트 적인기법사용)
+- 대용량 데이터, 비정형 데이터의 웹 서비스와 SNS, 클라우드 컴퓨팅의 확대 보급과
+대중화로 최근 주목받고 있는 데이터베이스 기술
+
+database ranking <<치면맨위사이트 들어가보기
+Oracle MySQL MsSQLserver PostgreSQL 은 관계형데이터베이스
+Redis MongoDB Cassandra NoSQL
+
+SQLite 경량화되어있어서 컴퓨터브라우저나 핸드폰에 들어가있음
+
+■데이터베이스 DBMS의 특징
+1. 데이터의 무결성
+2. 데이터의 독립성
+3. 보안 (Security) 
+4. 데이터 중복의 최소화
+5. SQL언어(Structured Query Language
+
+■MYSQL Server
+o Community Server
+o Enterprise Server
+o Embedded Serve
+
+■ GUI Tools
+o Migration Toolkit
+o Visual Studio Plug-in
+o MySQL Workbench: Query Browser Administrator <<우리가사용할 툴
+
+root pw 1234
+
+
+show databases; :   설치항목확인 키워드
+
+select version();  :  설치되어있는 버전 확인
+
+select current_date; : 현재날짜
+
+select version(), current_date; :동시에하면 2차원구조   
+↑column을요청
+
+대소문자 구분안해도 원하는 결과나옴
+
+use sakila;
+
+show tables;
+
+select * from actor; : excel 데이터랑 같음
+
+select * from db;
+
+select * from user;
+
+사칙연산가능
+select 1000/20;
+select 1000 / 20 *1000 from dual;
+
+ctrl + c 누르면 취소되고 다시돌아옴 
+
+
+-------------
+Workbench
+Users and Privilige 에서 add acount 는 유저만드는것.
+
+connection Name : 자기가 알만한 이름쓰기
+TCP :주고받는거 IP :주소
+
+--------------------------------------------------------
+Network : 
+client - server Architecture
+
+데이터를 주고 받는 것 : LAN
+
+IP : 
+address : 숫자방식 4가지 영역
+ex) 111.222.333.444
+=> 1가지 영역 ( 숫자별 ): 1~255개
+111: 네트워크 (건물의층)
+ 서울시 강남구 : 111 비유
+
+222.333.444 : 1~255 번호(컴퓨터의 주소)
+
+★ ip는 네트워크 부분 + 호스트 부분(컴퓨터이름)
+
+Router : 200.3 ip가 333.1 이랑 통신할수 있게 알려주는것.
+(Router)가 없다면 서로 통신연결 못함
+
+데이터베이스는  내윈도우에 실행
+
+DB server : 127.0.0.1 ★(os가 가르키는 주소)
+	 = localhost 
+Domain Name Server : DNS
+
+★자기 주소: IPv4 주소 . . . . . . . . . : 192.168.0.5 (외부에 등록된 주소)
+> ipconfig (명령프롬포트에치기)
+
+C:\Windows\System32\drivers\etc에서 ip알수잇음 hosts파일누르기
+> ip : localhost
+
+hostname 치면 DESKTOP-SPDE62H나옴<명령프롬프트>
+ping IP_Address <명령프롬프트>
+
+
+
+<명령 프롬프트>
+1.cd Downloads\employees <이름길어지게하는거
+2."C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -uroot -p
+3.sourece employees.sql
+
+4.show databases;
+5.use employees;
+6.show tables;
+
+7.select * from employees ;
+
+
+----
+Workbench
+workbench
+문들어가서
+schemas 누르고
+
+use employees; 치기
+스킬라 누르기
+show tables; 치기
+
+employee 마웃스 오른쪽 drop now 누르기
+
+
+
+
+
+-내부의 백업실행을위해서 하는거
+cmd실행
+★탭 활용하기 =자동완성
+"\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -uroot -p
+비번1234
+exit
+
+cd Downloads\employees (이름길어지는거 다시하기)
+"\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -uroot -p
+비번1234
+
+
+
+
+p.51
+★데이터베이스 모델링
+
+- 현실세계 에서 사용 되는 데이터를 MySQL에 어떻게 옮겨 놓을 것인지를 결정하는 과정
+- 저장할 정보는 테이블 형식에 맞춰 저장
+
+B-tree : 루트에 해당하는 알고리즘 구조 (자바 트리 생각하면됌)
+
+Workbench에서 스키마누르고 왼쪽 스키마 목록중 흰색부분에 오른쪽누르고
+create schemas 누르기
+charset 언어지원 / collation 
+
+1 row(s) affected =
+
+test 스키마를 담을 공간
+use test;  //사용할  스키마 호출
+use shopdb; // 사용할 스키마호출
+
+
+테이블 만든 목록 옆 i를 누르고 ddl(제일오른쪽) 누르면 언어 지정했던거 나옴
+도구표시 누르면 아까만든 목록나옴
+제일오른쪽은 select * from 나옴
+p86까지햇음
+
+not null하면 무조건 써야하는거 칼럼칸에 데이터 적어줘야함
+
+★명령어 모음
+
+가장기본
+use 스키마명; :스키마호출
+
+
+1. 테이블 생성
+create table 테이블명(
+	칼럼명 데이터자료형 (글자수)not null (해도되고 안해도됨), 
+	칼럼명 데이터자료형 (글자수),
+	칼럼명 데이터자료형 (글자수),
+	칼럼명 데이터자료형 (글자수),
+	primary key(기본값 지정)
+)
+;
+
+2. 테이블명의 column명 과 column데이터 전부확인
+select * from 테이블명 ;
+
+3. 스키마 내부에 있는 테이블명만 확인하기  
+show tables ;
+
+4. 인덱스 지정 ( = 책갈피 생성)
+create index 변수 on 테이블명(칼럼명) ;
+
+5.select 칼럼명,칼럼명 from 테이블명 ;    //* 쓰면 전부보여줌
+테이블안에 있는 칼럼
+
+6. 칼럼내부의 정보만 빼내기
+select 칼럼명 from 테이블명 where 칼럼명 = '칼럼 데이터명';
+
+7. limit 숫자 : 숫자만큼만 불러라
+
+●SQL 2일차
+
+windows power shell : dir 
+
+
+C:\Users\BIT>d  예시
+
+C: <<< 절대경로 시작점
+
+\ : 기반으로하다 라는뜻   첫번째 슬래시가 루트라는뜻 (루트디렉토리)
+리눅스는 슬래시
+
+Users : Users 폴더에 담았다.
+
+BIT
+---------
+dir . : 현재 디렉토리
+dir ..\  : 한칸위 디렉토리
+dir ..\ ..\ 두칸위 디렉토리
+
+
+\ : 루트디렉토리
+
+echo %path%
+= path 출력하라
+
+
+ipconfig /all : 윈도우 ip 구성 , 이더넷 어댑터 이더넷 나옴
+
+데모(demo) : 백그라운드에서 도는 것
+
+
+작업관리자 > 서비스 > 중지/시작 > 파일에서 우클릭후 서비스열기 >파일에서 우클릭후 속성 >  실행파일경로 ㅊㅇ
+
+-select : 질의를 받은것을 답을 줌
+
+
+
+
+
+
